@@ -1,5 +1,5 @@
 #!/bin/bash
-export HOME=/config
+#export HOME=/config
 
 for modPath in /home/container/Stardew/game/Mods/*/
 do
