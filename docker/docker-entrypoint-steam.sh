@@ -1,7 +1,7 @@
 #!/bin/bash
 export HOME=/config
 
-for modPath in $GAME_PATH/Mods/*/
+for modPath in /home/container/Stardew/game/Mods/*/
 do
   mod=$(basename "$modPath")
 
@@ -26,15 +26,11 @@ do
 done
 
 # Run extra steps for certain mods
-/opt/configure-remotecontrol-mod.sh
-
-/opt/tail-smapi-log.sh &
+/home/container/Stardew/scripts/configure-remotecontrol-mod.sh
+/home/container/Stardew/scripts/tail-smapi-log.sh &
 
 # Ready to start!
-
 export XAUTHORITY=~/.Xauthority
-sed -i 's/env TERM=xterm $LAUNCHER "$@"/env SHELL=\/bin\/bash TERM=xterm xterm  -e "\/bin\/bash -c $LAUNCHER \"$@\""/' $GAME_PATH/Stardew\ Valley
-
-bash -c "$GAME_PATH/start.sh"
+bash -c "/home/container/Stardew/start.sh"
 
 sleep 233333333333333
