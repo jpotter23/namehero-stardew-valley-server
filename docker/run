@@ -1,5 +1,2 @@
 #!/bin/sh
-
-if [ -z "`cat /data/Stardew/game/Mods/AutoLoadGame/config.json`" ] ; then
-	chmod 777 /data/Stardew/game/Mods/AutoLoadGame/config.json;
-fi
+chmod 777 /home/container/Stardew/game/Mods/AutoLoadGame/config.json
